@@ -93,11 +93,30 @@ body {
 .startScreen,
 .questionWhoIsPlayerOne,
 .questionWhoIsPlayerTwo,
-.winnerText {
+.winnerText,
+.replayTxt,
+.farewellMsg {
     font-family: 'Gotham Book', Arial, sans-serif;
     text-transform: uppercase;
     text-align: center;
     color: rgba(9, 30, 56, 1);
+}
+
+.replayBtn,
+.quitBtn {
+    width: 150px;
+    height: 50px;
+    font-family: 'Gotham Book', Arial, sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+    border-radius: 15px;
+    background-color:  rgba(9, 30, 56, 1);
+    color: rgba(255, 255, 255, 1);
+    margin: 0 12.25% ;
+
+    cursor: pointer;
 }
 
 .startBtn,
@@ -165,7 +184,10 @@ input[type="text"] {
     margin-bottom: 5%;
 }
 
+.replayGame,
+.farewellMsg,
 /* .winnerPopUp, */
+#winnerScreen,
 .WhoIsPlayerOne,
 .WhoIsPlayerTwo,
 .warningInputIncorrectPlayerOne,
