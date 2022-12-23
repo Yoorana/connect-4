@@ -92,14 +92,16 @@ body {
 
 .startScreen,
 .questionWhoIsPlayerOne,
-.questionWhoIsPlayerTwo {
+.questionWhoIsPlayerTwo,
+.winnerText {
     font-family: 'Gotham Book', Arial, sans-serif;
     text-transform: uppercase;
     text-align: center;
     color: rgba(9, 30, 56, 1);
 }
 
-.startBtn {
+.startBtn,
+.nextBtn {
     width: 150px;
     height: 50px;
     font-family: 'Gotham Book', Arial, sans-serif;
@@ -114,6 +116,7 @@ body {
 
     cursor: pointer;
 }
+
 
 input {
     width: 300px;
@@ -162,6 +165,7 @@ input[type="text"] {
     margin-bottom: 5%;
 }
 
+/* .winnerPopUp, */
 .WhoIsPlayerOne,
 .WhoIsPlayerTwo,
 .warningInputIncorrectPlayerOne,

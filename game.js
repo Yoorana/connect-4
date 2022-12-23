@@ -286,6 +286,13 @@ class Game {
         }
     }
 
+    printName() {
+        console.log(this.game.players[0].name);
+        document.getElementById("winnerName").innerHTML = this.game.players[0].name;
+    }
+
+
+
     /**
      * Both 2 players have to fill in their name to be either player one or two
      * Can't fill identical names for player one and two
@@ -323,8 +330,10 @@ class Game {
             this.game.players[0].name = playerOneName;
             this.hideElementsByClassName(playerOneScreen); 
             this.revealElementsByClassName(playerTwoScreen); 
+            
         }
-        
+        console.log(this.game.players[0].name);
+        this.printName(); 
     }
     
     /**
