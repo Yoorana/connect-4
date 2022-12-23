@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <script src="game.js"></script>
+        <link href="game-style.css" rel="stylesheet"/>
+        <link href="http://fonts.cdnfonts.com/css/gotham" rel="stylesheet">
+       
+    </head>
+    <body>
+        <div id="modal" class="modal">
+            <div class="modalContent">
+                <div class="startScreen">
+                    <span id="closeModalBtn" class="closeModalBtn" onclick="game.hideElementsByClassName('modal')">
+                        &times</span>
+
+                    <h1><strong>Welcome!</strong></h1>
+                    <h2>You want to play connect 4?</h2>
+                    <button id="startBtn" class="startBtn" onclick="game.hideElementsByClassName('startScreen');
+                    game.revealElementsByClassName('WhoIsPlayerOne');">
+                        Start</button>
+                </div>
+
+                <div class="playerNameScreen">
+                    <div class="WhoIsPlayerOne">
+                        <h2 class="questionWhoIsPlayerOne">What is your name player 1?</h2>
+                        <h5 class="warningInputIncorrectPlayerOne">I think you forgot to fill in your name... 
+                            No problem, try again!</h4>
+                        <nav class="nameInputPlayerOne">
+                            <input id="playerOneName" class="playerTextField" type="text">
+                            <button class="nameConfirmBtn" 
+                            onclick="game.enterPlayerOneName('warningInputIncorrectPlayerOne','WhoIsPlayerTwo','WhoIsPlayerOne')";
+                            game.revealElementsByClassName('WhoIsPlayerTwo');">go</button>
+                        </nav>
+                    </div>
+
+                    <div class="WhoIsPlayerTwo">
+                        <h2 class="questionWhoIsPlayerTwo">What is your name player 2?</h2>
+                        <div class="warningInputIncorrectPlayerTwo">
+                            <h5>I think either you forgot to fill in your name or pretending to be someone else...</h4>
+                            <h5>Please fill in YOUR name!</h4>
+                        </div>
+
+                        <nav class="nameInputPlayerTwo">
+                            <input id="playerTwoName" class="playerTextField" type="text">
+                            <button class="nameConfirmBtn" onclick="game.enterPlayerTwoName('warningInputIncorrectPlayerTwo','modal')">go</button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Defines buttons -->
+        <nav id="nav" class="nav game"></nav>
+        <!-- Defines game board -->
+        <section id="board" class="board game"></section>
+        
+        <script>
+            let game = new Game();
+            game.build(); 
+            // Disabled player name since it's annoying feature to test a game
+            // game.enterPlayerNames();
+        </script>
+    </body>
+    <footer>
+        <p></p>
+    </footer>
+</html>

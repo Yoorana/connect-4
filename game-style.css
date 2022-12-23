@@ -1,0 +1,170 @@
+/* game board itself */
+section {
+    background: rgb(9, 30, 56);
+    width: 800px;
+    height: 700px;
+    position: relative;
+    top: 60px;
+    margin: auto;
+    display: grid;
+    grid-gap: 5px;
+    justify-items: center;
+    align-items: center;
+    border:rgb(9, 30, 56) solid 15px;
+    border-radius: 50px;
+}
+/* navigation bar where the buttons are */
+.nav {
+    width: 800px;
+    height: 100px; 
+    margin: auto;
+    display: grid;
+    grid-gap: 5px;
+    justify-items: center;
+    align-items: center;
+}
+/* buttons to place the disks */
+.btColumnSelection {
+    position: relative;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    border-radius: 50%;
+
+}
+/* each individual box in the grid */
+section 
+.box {
+    background: #37C1F1;
+    width: 95%;
+    height: 95%;
+    border-color: #091E38;
+    border-radius: 50%;
+}
+/* global font in body */
+body {
+    font-family: 'Gotham Book', Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: 20%;
+}
+
+/* modal settings */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0, 0.50);
+    
+}
+/* content in modal */
+.modalContent {
+    background-color: rgba(255, 255, 255, 1);
+    margin: 13% auto;
+    padding: 20px;
+    width: 600px;
+    min-height: 40px;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0, 0.20), 
+    0 7px 20px 0 rgba(0,0,0, 0.15);
+
+}
+
+.closeModalBtn {
+    display: none;
+    color: rgba(119, 136, 153, 1);
+    float: right;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.closeModalBtn:hover, 
+.closeModalBtn:focus {
+    color: rgba(255, 50, 0, 1);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.startScreen,
+.questionWhoIsPlayerOne,
+.questionWhoIsPlayerTwo {
+    font-family: 'Gotham Book', Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(9, 30, 56, 1);
+}
+
+.startBtn {
+    width: 150px;
+    height: 50px;
+    font-family: 'Gotham Book', Arial, sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+    border-radius: 15px;
+    background-color:  rgba(9, 30, 56, 1);
+    color: rgba(255, 255, 255, 1);
+    margin: auto 225px;
+
+    cursor: pointer;
+}
+
+input {
+    width: 300px;
+    height: 40px;
+    border-radius: 15px;
+}
+
+input[type="text"] {
+    font-family: 'Gotham Book', Arial, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    
+}
+
+.nameConfirmBtn {
+    font-family: 'Gotham Book', Arial, sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    width: 80px;
+    height: 40px;
+
+    letter-spacing: 1px;
+    border-radius: 15px;
+    background-color:  rgba(9, 30, 56, 1);
+    color: rgba(255, 255, 255, 1);
+
+    cursor: pointer;
+}
+
+.playerNameScreen {
+    margin: auto auto 5%;
+}
+
+.warningInputIncorrectPlayerOne,
+.warningInputIncorrectPlayerTwo {
+    font-family: 'Gotham Book', Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    line-height: 0px;
+    color: rgba(255, 50, 0, 1);
+}
+
+.nameInputPlayerOne,
+.nameInputPlayerTwo {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.WhoIsPlayerOne,
+.WhoIsPlayerTwo,
+.warningInputIncorrectPlayerOne,
+.warningInputIncorrectPlayerTwo {
+    display: none;
+}
