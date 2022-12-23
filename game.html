@@ -45,15 +45,18 @@
                         </nav>
                     </div>
                 </div>
-                <div class="winnerPopUp">
+                <div id="winnerScreen" class="winnerPopUp">
                     <h1 class="winnerText">Congratulation!</h1>
                     <h3 class="winnerText">Way to go <span id="winnerName"></span>!</h3>
-                    <button id="nextBtn" class="nextBtn" onclick="">Next</button>
+                    <button id="nextBtn" class="nextBtn" onclick="game.replayScreen('winnerPopUp','replayGame')">Next</button>
                 </div>
-                <!-- <div class="replayGame">
-                    <button id="replayBtn" class="replayBtn">Replay</button>
-                    <button id="quitBtn" class="quitBtn">Quit</button>
-                </div> -->
+                <div class="replayGame">
+                    <h2 class="replayTxt">Would you like to play again?</h2>
+                    <button id="replayBtn" class="replayBtn" onclick="game.replayGame()">Yes</button>
+                    <button id="quitBtn" class="quitBtn" onclick="game.quitGame('replayBtn','quitBtn','farewellMsg')">No</button>
+                    <h2 class="farewellMsg">Thank you for playing!</h2>
+                    <h2 class="farewellMsg">Enjoy your day!</h2>
+                </div>
             </div>
         </div>
 
@@ -65,8 +68,6 @@
         <script>
             let game = new Game();
             game.build(); 
-            // Disabled player name since it's annoying feature to test a game
-            // game.enterPlayerNames();
         </script>
     </body>
     <footer>
