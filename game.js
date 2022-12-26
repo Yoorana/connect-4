@@ -82,7 +82,7 @@ class Game {
       for (let boxIndex = 0; boxIndex < this.board.columns; boxIndex++) {
         navElement.innerHTML +=
           `<button class="btColumnSelection" id="column_${boxIndex}" onmouseover="game.hoverColour(this.id)" onmouseout="game.defaultColour(this.id)"` +
-          ` onclick="game.spawnDisk(${boxIndex})">`;
+          ` onclick="game.spawnDisk(${boxIndex},'modal','winnerScreen')">`;
       }
   }
   /**
@@ -106,7 +106,7 @@ class Game {
    * fill the box with the value and draws it in the box (visually)
    * @param column The selected column number
    */
-  spawnDisk(column) {
+  spawnDisk(column, modal , winnerScreen) {
     for (let row = this.boxesData[column].length - 1; row > -1; row--) {
       // Checks if there is an empty boxes, if empty fills box with either 1 or 2 value
       // falsy is undefined, NaN, Null and number zero
@@ -122,7 +122,9 @@ class Game {
         this.checkWinner(
           this.winColumn(column),
           this.winRow(column, row),
-          this.winDiagonal(column, row)
+          this.winDiagonal(column, row), 
+          modal, 
+          winnerScreen
         ) 
 
         //swap player
@@ -284,13 +286,13 @@ class Game {
    * @param {*} winColumn win condition of having 4 of the same disk in a column
    * @param {*} winDiagonal win condition of having 4 of the same disk in a diagonal
    */
-  checkWinner(winColumn, winRow, winDiagonal) {
+  checkWinner(winColumn, winRow, winDiagonal, modal, winnerScreen) {
     if (winColumn == true || winRow == true || winDiagonal == true) {
         console.log('we have a winner');
 
-        document.getElementById("winnerScreen").style.display = "block";
-        
-        
+        this.revealElementsByClassName(modal);
+        this.printWinnerName();
+        this.revealElementsByClassName(winnerScreen);
     } 
   }
 
@@ -379,13 +381,14 @@ class Game {
    *  Fill in player two name with a promptbox,
    *  Check; you can't leave the promptbox empty nor can you fill in the same name as player one
    */
-  enterPlayerTwoName(warning, modalWindow) {
+  enterPlayerTwoName(warning, modalWindow, playerTwoScreen) {
     let playerTwoName = document.getElementById("playerTwoName").value;
     if (!playerTwoName || playerTwoName == this.game.players[0].name) {
       this.revealElementsByClassName(warning);
     } else {
       this.game.players[1].name = playerTwoName;
       this.hideElementsByClassName(modalWindow);
+      this.hideElementsByClassName(playerTwoScreen);
     }
   }
 }
