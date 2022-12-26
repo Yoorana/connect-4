@@ -186,8 +186,7 @@ input[type="text"] {
 
 .replayGame,
 .farewellMsg,
-/* .winnerPopUp, */
-#winnerScreen,
+.winnerScreen,
 .WhoIsPlayerOne,
 .WhoIsPlayerTwo,
 .warningInputIncorrectPlayerOne,
